@@ -24,7 +24,16 @@ public class TestMain {
         // System.out.println(testRomanToInt());
 
         // 最长公共前缀
-        System.out.println(testLongestCommonPrefix());
+        // System.out.println(testLongestCommonPrefix());
+
+        // 判断有效的括号
+        // System.out.println(testIsValid());
+
+        // 合并两个链表为有序链表
+        // System.out.println(testMergeTwoLists());
+
+        // 删除有序数组中的重复项
+        System.out.println(testRemoveDuplicates());
     }
 
     private static String leftRe(){
@@ -55,5 +64,38 @@ public class TestMain {
         LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
         String[] strs = {"flower","flow","flight"};
         return longestCommonPrefix.longestCommonPrefix(strs);
+    }
+
+    private static boolean testIsValid() {
+        String s = "()[]{}";
+        return IsValid.isValid(s);
+    }
+
+    private static ArrayList<Integer> testMergeTwoLists() {
+        MergeTwoLists mergeTwoLists = new MergeTwoLists();
+        ListNode nodeList2 = new ListNode(4);
+        ListNode nodeList1 = new ListNode(2, nodeList2);
+        ListNode nodeList = new ListNode(1, nodeList1);
+        ListNode secNodeList2 = new ListNode(4);
+        ListNode secNodeList1 = new ListNode(3, secNodeList2);
+        ListNode secNodeList = new ListNode(1, secNodeList1);
+        ListNode listNode = mergeTwoLists.mergeTwoLists(nodeList, secNodeList);
+
+        ArrayList<Integer> listNodes = new ArrayList<>();
+        while (true) {
+            listNodes.add(listNode.val);
+            if (listNode.next == null) {
+                break;
+            }
+            listNode = listNode.next;
+        }
+
+        return listNodes;
+    }
+
+    private static int testRemoveDuplicates() {
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        return removeDuplicates.removeDuplicates(nums);
     }
 }

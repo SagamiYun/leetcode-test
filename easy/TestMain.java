@@ -33,7 +33,22 @@ public class TestMain {
         // System.out.println(testMergeTwoLists());
 
         // 删除有序数组中的重复项
-        System.out.println(testRemoveDuplicates());
+        // System.out.println(testRemoveDuplicates());
+
+        // 移除元素
+        // System.out.println(testRemoveElement());
+
+        // 搜索插入位置
+        // System.out.println(testSearchInsert());
+
+        // 最后一个单词的长度
+        // System.out.println(testLengthOfLastWord());
+
+        // 加一
+        // System.out.println(Arrays.toString(testPlusOne()));
+
+        // 二进制求和
+        System.out.println(testAddBinary());
     }
 
     private static String leftRe(){
@@ -97,5 +112,37 @@ public class TestMain {
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
         int[] nums = {0,0,1,1,1,2,2,3,3,4};
         return removeDuplicates.removeDuplicates(nums);
+    }
+
+    private static int testRemoveElement() {
+        RemoveElement removeElement = new RemoveElement();
+        int[] nums = {3,2,2,3};
+        int value = 3;
+        return removeElement.removeElement(nums, value);
+    }
+
+    private static int testSearchInsert() {
+        SearchInsert searchInsert = new SearchInsert();
+        int[] nums = {1,3,5,6};
+        int target = 2;
+        return searchInsert.searchInsert(nums, target);
+    }
+
+    private static int testLengthOfLastWord() {
+        LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
+        String s = "Hello World";
+        return lengthOfLastWord.lengthOfLastWord(s);
+    }
+
+    private static int[] testPlusOne() {
+        PlusOne plusOne = new PlusOne();
+        int[] digits = {1,2,3};
+        return plusOne.plusOne(digits);
+    }
+
+    private static String testAddBinary() {
+        AddBinary addBinary = new AddBinary();
+        String a = "11", b = "1";
+        return addBinary.addBinary(a, b);
     }
 }

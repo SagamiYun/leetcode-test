@@ -48,7 +48,10 @@ public class TestMain {
         // System.out.println(Arrays.toString(testPlusOne()));
 
         // 二进制求和
-        System.out.println(testAddBinary());
+        // System.out.println(testAddBinary());
+
+        // x的平方根
+        System.out.println(testMySqrt());
     }
 
     private static String leftRe(){
@@ -144,5 +147,11 @@ public class TestMain {
         AddBinary addBinary = new AddBinary();
         String a = "11", b = "1";
         return addBinary.addBinary(a, b);
+    }
+
+    private static int testMySqrt() {
+        MySqrt mySqrt = new MySqrt();
+        int x = 8;
+        return mySqrt.mySqrt(x);
     }
 }

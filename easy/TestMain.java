@@ -6,8 +6,8 @@ import java.util.Arrays;
 /**
  * @author SagamiYun
  * @version 2023/2/2
- * <p>@ClassName TestMain<p/>
- * <p>@Date 2023/2/2 5:18<p/>
+ * <p>@ClassName TestMain</p>
+ * <p>@Date 2023/2/2 5:18</p>
  */
 public class TestMain {
     public static void main(String[] args) {
@@ -51,7 +51,13 @@ public class TestMain {
         // System.out.println(testAddBinary());
 
         // x的平方根
-        System.out.println(testMySqrt());
+        // System.out.println(testMySqrt());
+
+        // 爬楼梯
+        // System.out.println(testClimbStairs());
+
+        // 删除排序链表中的重复元素
+        System.out.println(testDeleteDuplicates());
     }
 
     private static String leftRe(){
@@ -153,5 +159,29 @@ public class TestMain {
         MySqrt mySqrt = new MySqrt();
         int x = 8;
         return mySqrt.mySqrt(x);
+    }
+
+    private static int testClimbStairs() {
+        ClimbStairs climbStairs = new ClimbStairs();
+        int n = 2;
+        return climbStairs.climbStairs(n);
+    }
+
+    private static ArrayList<Integer> testDeleteDuplicates() {
+        DeleteDuplicates deleteDuplicates = new DeleteDuplicates();
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(3);
+        head.next.next.next.next = new ListNode(4);
+        head.next.next.next.next.next = new ListNode(4);
+        head.next.next.next.next.next.next = new ListNode(5);
+        ListNode result = deleteDuplicates.deleteDuplicates(head);
+        ArrayList<Integer> nums = new ArrayList<>();
+        while (result != null) {
+            nums.add(result.val);
+            result = result.next;
+        }
+        return nums;
     }
 }

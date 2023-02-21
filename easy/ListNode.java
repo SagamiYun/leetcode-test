@@ -3,9 +3,9 @@ package easy;
 /**
  * @author SagamiYun
  * @version 2023/2/4
- * <p>@ClassName ListNode<p/>
- * <p>@Description TODO <p/>
- * <p>@Date 2023/2/4 23:00<p/>
+ * <p>@ClassName ListNode</p>
+ * <p>@Description TODO </p>
+ * <p>@Date 2023/2/4 23:00</p>
  */
 public class ListNode {
     int val;

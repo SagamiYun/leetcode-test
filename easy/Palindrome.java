@@ -3,11 +3,11 @@ package easy;
 /**
  * @author SagamiYun
  * @version 2023/2/3
- * <p>@ClassName Palindrome<p/>
+ * <p>@ClassName Palindrome</p>
  * <p>@Description 这段代码的思路是判断给定的整数是否是回文整数。
  * 首先将整数转换为字符串，然后使用循环遍历字符串的每一个字符，判断从头到尾的字符是否和从尾到头的字符相同。
- * 如果一直相同，则返回true，否则返回false。 <p/>
- * <p>9. 回文数<p/>
+ * 如果一直相同，则返回true，否则返回false。 </p>
+ * <p>9. 回文数</p>
  */
 public class Palindrome {
     public static boolean isPalindrome(int x) {

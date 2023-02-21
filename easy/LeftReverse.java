@@ -3,8 +3,8 @@ package easy;
 /**
  * @author SagamiYun
  * @version 2023/2/2
- * <p>@ClassName LeftReverse<p/>
- * <p>剑指 Offer 58 - II. 左旋转字符串<p/>
+ * <p>@ClassName LeftReverse</p>
+ * <p>剑指 Offer 58 - II. 左旋转字符串</p>
  */
 public class LeftReverse {
     public static String leftRotate(String str, int k) {

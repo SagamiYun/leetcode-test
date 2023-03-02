@@ -1,7 +1,10 @@
 package easy;
 
+import tree.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author SagamiYun
@@ -57,7 +60,13 @@ public class TestMain {
         // System.out.println(testClimbStairs());
 
         // 删除排序链表中的重复元素
-        System.out.println(testDeleteDuplicates());
+        // System.out.println(testDeleteDuplicates());
+
+        // 合并两个有序数组
+        // System.out.println(Arrays.toString(testMerge()));
+
+        // 二叉树的中序遍历
+        System.out.println(testInorderTraversal());
     }
 
     private static String leftRe(){
@@ -183,5 +192,26 @@ public class TestMain {
             result = result.next;
         }
         return nums;
+    }
+
+    private static int[] testMerge() {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+
+        Merge merge = new Merge();
+
+        merge.merge(nums1, 3, nums2, 3);
+
+        return nums1;
+    }
+
+    private static List<Integer> testInorderTraversal() {
+        // 构建一棵二叉树
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
+
+        InorderTraversal solution = new InorderTraversal();
+        return solution.inorderTraversal(root);
     }
 }

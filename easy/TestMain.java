@@ -3,7 +3,6 @@ package easy;
 import tree.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -66,7 +65,19 @@ public class TestMain {
         // System.out.println(Arrays.toString(testMerge()));
 
         // 二叉树的中序遍历
-        System.out.println(testInorderTraversal());
+        // System.out.println(testInorderTraversal());
+
+        // 判断两个二叉树是否相同
+        // System.out.println(isSameTreeTest());
+
+        // 测试二叉树是否轴对称
+        // System.out.println(testIsSymmetric());
+
+        // 二叉树最大深度
+        // System.out.println(testMaxDepth());
+
+        // 数组转换高度平衡二叉树
+        // System.out.println(testSortedArrayToBST());
     }
 
     private static String leftRe(){
@@ -213,5 +224,64 @@ public class TestMain {
 
         InorderTraversal solution = new InorderTraversal();
         return solution.inorderTraversal(root);
+    }
+
+    private static Boolean isSameTreeTest() {
+        TreeNode p2 = null;
+        TreeNode q2 = new TreeNode(1);
+        IsSameTree isSameTree = new IsSameTree();
+        return isSameTree.isSameTree(p2, q2);
+    }
+
+    private static Boolean testIsSymmetric() {
+        TreeNode root = new TreeNode(1);
+        TreeNode node1 = new TreeNode(2);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(4);
+        TreeNode node6 = new TreeNode(3);
+        root.left = node1;
+        root.right = node2;
+        node1.left = node3;
+        node1.right = node4;
+        node2.left = node5;
+        node2.right = node6;
+
+        IsSymmetric isSymmetric = new IsSymmetric();
+        return isSymmetric.isSymmetric(root);
+    }
+
+    private static Integer testMaxDepth() {
+        TreeNode root = new TreeNode(3);
+        TreeNode node1 = new TreeNode(9);
+        TreeNode node2 = new TreeNode(20);
+        TreeNode node3 = new TreeNode(15);
+        TreeNode node4 = new TreeNode(7);
+        root.left = node1;
+        root.right = node2;
+        node2.left = node3;
+        node2.right = node4;
+
+        MaxDepth maxDepth = new MaxDepth();
+        return maxDepth.maxDepth(root);
+    }
+
+    private static List<Integer> testSortedArrayToBST() {
+        int[] nums4 = {1, 2, 3, 4, 5};
+        List<Integer> res = new ArrayList<>();
+        SortedArrayToBST sortedArrayToBST = new SortedArrayToBST();
+        TreeNode treeNode = sortedArrayToBST.sortedArrayToBST(nums4);
+        inorder(treeNode, res);
+        return res;
+    }
+
+    private static void inorder(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.left, res);
+        res.add(root.val);
+        inorder(root.right, res);
     }
 }

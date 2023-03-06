@@ -1,9 +1,11 @@
 package easy;
 
+import normal.LRUCache;
 import tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author SagamiYun
@@ -78,6 +80,33 @@ public class TestMain {
 
         // 数组转换高度平衡二叉树
         // System.out.println(testSortedArrayToBST());
+
+        // 判断平衡二叉树
+        // System.out.println(testIsBalanced());
+
+        // 找出最小深度二叉树
+        // System.out.println(testMinDepth());
+
+        // 判断路径总和
+        // System.out.println(testHasPathSum());
+
+        // 杨辉三角
+        // System.out.println(testGenerate());
+
+        // 根据rowIndex返回对应的行数据
+        // System.out.println(testGetRow());
+
+        // 购买股票的最佳时机
+        // System.out.println(testMaxProfit());
+
+        // 验证翻转字符串
+        // System.out.println(testIsPalindrome());
+
+        // 只出现一次的数字
+        // System.out.println(testSingleNumber());
+
+        // LRU算法
+        System.out.println(testLRUCache());
     }
 
     private static String leftRe(){
@@ -283,5 +312,81 @@ public class TestMain {
         inorder(root.left, res);
         res.add(root.val);
         inorder(root.right, res);
+    }
+
+    private static boolean testIsBalanced() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        return new IsBalanced().isBalanced(root);
+    }
+
+    private static Integer testMinDepth() {
+        TreeNode treeNode = generateRandomTree(3);
+
+        return new MinDepth().minDepth(treeNode);
+    }
+
+    private static Boolean testHasPathSum() {
+        return new HasPathSum().hasPathSum(generateRandomTree(3), 3);
+    }
+
+    private static List<List<Integer>> testGenerate() {
+        return new Generate().generate(5);
+    }
+
+    private static List<Integer> testGetRow() {
+        return new GetRow().getRow(3);
+    }
+
+    private static Integer testMaxProfit() {
+        int[] nums = {7, 1, 5, 3, 6, 4};
+        return new MaxProfit().maxProfit(nums);
+    }
+
+    private static Boolean testIsPalindrome() {
+        return new IsPalindrome().isPalindrome("acdca");
+    }
+
+    private static Integer testSingleNumber() {
+        int[] nums = {2, 2, 1};
+        return new SingleNumber().singleNumber(nums);
+    }
+
+    private static ArrayList<Integer> testLRUCache() {
+        LRUCache cache = new LRUCache(2);
+        cache.put(1, 1);
+        cache.put(2, 2);
+        cache.put(3, 3);
+        cache.put(4, 4);
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (int i = 4; i > 0; i--) {
+            integers.add(cache.get(i));
+        }
+
+        return integers;
+    }
+
+    /**
+     * 生成指定层数随机节点树
+     */
+    private static TreeNode generateRandomTree(int maxDepth) {
+        // 叶子节点
+        if (maxDepth == 0) {
+            return null;
+        }
+        Random random = new Random();
+        // 生成随机值
+        int val = random.nextInt(100);
+        // 构造节点
+        TreeNode node = new TreeNode(val);
+        // 随机生成左子树
+        node.left = generateRandomTree(maxDepth - 1);
+        // 随机生成右子树
+        node.right = generateRandomTree(maxDepth - 1);
+        return node;
     }
 }

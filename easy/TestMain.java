@@ -106,7 +106,16 @@ public class TestMain {
         // System.out.println(testSingleNumber());
 
         // LRU算法
-        System.out.println(testLRUCache());
+        // System.out.println(testLRUCache());
+
+        // 环形链表检测
+        // System.out.println(testHasCycle());
+
+        // 二叉树前序遍历
+        // System.out.println(testPreorderTraversal());
+
+        // 二叉树后序遍历
+        System.out.println(testPostorderTraversal());
     }
 
     private static String leftRe(){
@@ -368,6 +377,25 @@ public class TestMain {
         }
 
         return integers;
+    }
+
+    private static boolean testHasCycle() {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = head.next;
+
+
+        return new HasCycle().hasCycle(head);
+    }
+
+    private static List<Integer> testPreorderTraversal() {
+        return new PreorderTraversal().preorderTraversal(generateRandomTree(4));
+    }
+
+    private static List<Integer> testPostorderTraversal() {
+        return new PostorderTraversal().postorderTraversal(generateRandomTree(3));
     }
 
     /**

@@ -115,7 +115,16 @@ public class TestMain {
         // System.out.println(testPreorderTraversal());
 
         // 二叉树后序遍历
-        System.out.println(testPostorderTraversal());
+        // System.out.println(testPostorderTraversal());
+
+        // 根据整数求得Excel中的列名称
+        // System.out.println(testConvertToTitle());
+
+        // 给定一个大小为n的数组nums，返回其中的多数元素
+        // System.out.println(testMajorityElement());
+
+        // 求出双链表的交叉点
+        System.out.println(testGetIntersectionNode());
     }
 
     private static String leftRe(){
@@ -396,6 +405,28 @@ public class TestMain {
 
     private static List<Integer> testPostorderTraversal() {
         return new PostorderTraversal().postorderTraversal(generateRandomTree(3));
+    }
+
+    private static String testConvertToTitle() {
+        return new ConvertToTitle().convertToTitle(35);
+    }
+
+    private static Integer testMajorityElement() {
+        return new MajorityElement().majorityElement(new int[]{3, 2, 3});
+    }
+
+    private static Integer testGetIntersectionNode() {
+        ListNode headA = new ListNode(4);
+        headA.next = new ListNode(1);
+        headA.next.next = new ListNode(8);
+        headA.next.next.next = new ListNode(4);
+        headA.next.next.next.next = new ListNode(5);
+
+        ListNode headB = new ListNode(5);
+        headB.next = new ListNode(0);
+        headB.next.next = new ListNode(1);
+        headB.next.next.next = headA.next.next;
+        return new GetIntersectionNode().getIntersectionNode(headA, headB).val;
     }
 
     /**

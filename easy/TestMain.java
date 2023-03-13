@@ -124,7 +124,13 @@ public class TestMain {
         // System.out.println(testMajorityElement());
 
         // 求出双链表的交叉点
-        System.out.println(testGetIntersectionNode());
+        // System.out.println(testGetIntersectionNode());
+
+        // 颠倒给定的二进制位
+        // System.out.println(testReverseBits());
+
+        // 位1的个数
+        System.out.println(testHammingWeight());
     }
 
     private static String leftRe(){
@@ -413,6 +419,14 @@ public class TestMain {
 
     private static Integer testMajorityElement() {
         return new MajorityElement().majorityElement(new int[]{3, 2, 3});
+    }
+
+    private static Integer testReverseBits() {
+        return new ReverseBits().reverseBits(43261596);
+    }
+
+    private static Integer testHammingWeight() {
+        return new HammingWeight().hammingWeight(3527);
     }
 
     private static Integer testGetIntersectionNode() {

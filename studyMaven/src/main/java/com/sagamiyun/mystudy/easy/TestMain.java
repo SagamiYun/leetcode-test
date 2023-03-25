@@ -4,6 +4,7 @@ import com.sagamiyun.mystudy.normal.LRUCache;
 import com.sagamiyun.mystudy.tree.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -172,7 +173,19 @@ public class TestMain {
         // System.out.println(testIsPalindromeLink());
 
         // 有效的字母异位词
-        System.out.println(testIsAnagram());
+        // System.out.println(testIsAnagram());
+
+        // 获取二叉树的所有路径
+        // System.out.println(testBinaryTreePaths());
+
+        // 给定一个非负数，反复将各位上的数相加，直到结果为一位数，返回该结果
+        // System.out.println(testAddDigits());
+
+        // 判断"丑数"
+        // System.out.println(testUglyNumber());
+
+        // 移动零: 0 移动到数组的末尾，同时保持非零元素的相对顺序
+        System.out.println(Arrays.toString(testMoveZeroes()));
     }
 
     private static String leftRe(){
@@ -557,6 +570,38 @@ public class TestMain {
         return new IsPowerOfTwo().isPowerOfTwo(n);
     }
 
+    private static Boolean testIsPalindromeLink() {
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(2, new ListNode(1)))));
+        return new IsPalindrome().isPalindrome(head);
+    }
+
+    private static Boolean testIsAnagram() {
+        String s1 = "anagram";
+        String s2 = "nagaram";
+        return new IsAnagram().isAnagram(s1, s2);
+    }
+
+    private static List<String> testBinaryTreePaths() {
+        TreeNode treeNode = generateRandomTree(3);
+        return new BinaryTreePaths().binaryTreePaths(treeNode);
+    }
+
+    private static Integer testAddDigits() {
+        int num = 12345;
+        return new AddDigits().addDigits(num);
+    }
+
+    private static Boolean testUglyNumber() {
+        int n = 6;
+        return UglyNumber.isUgly(n);
+    }
+
+    private static int[] testMoveZeroes() {
+        int[] nums = {0, 1, 0, 3, 12};
+        MoveZeroes.moveZeroes(nums);
+        return nums;
+    }
+
     /**
      * 用于打印二叉树的前序遍历
      */
@@ -577,17 +622,6 @@ public class TestMain {
             System.out.print(root.val + " ");
             inOrderTraversal(root.right);
         }
-    }
-
-    private static Boolean testIsPalindromeLink() {
-        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(2, new ListNode(1)))));
-        return new IsPalindrome().isPalindrome(head);
-    }
-
-    private static Boolean testIsAnagram() {
-        String s1 = "anagram";
-        String s2 = "nagaram";
-        return new IsAnagram().isAnagram(s1, s2);
     }
 
     /**

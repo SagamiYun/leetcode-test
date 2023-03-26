@@ -185,7 +185,13 @@ public class TestMain {
         // System.out.println(testUglyNumber());
 
         // 移动零: 0 移动到数组的末尾，同时保持非零元素的相对顺序
-        System.out.println(Arrays.toString(testMoveZeroes()));
+        // System.out.println(Arrays.toString(testMoveZeroes()));
+
+        // 根据两个单词，判断两个单词是否具有规律
+        // System.out.println(testWordPattern());
+
+        // Nim游戏
+        System.out.println(testCanWinNim());
     }
 
     private static String leftRe(){
@@ -600,6 +606,17 @@ public class TestMain {
         int[] nums = {0, 1, 0, 3, 12};
         MoveZeroes.moveZeroes(nums);
         return nums;
+    }
+
+    private static Boolean testWordPattern() {
+        String pattern = "abba";
+        String s = "dog cat cat dog";
+        return WordPattern.wordPattern(pattern, s);
+    }
+
+    private static Boolean testCanWinNim() {
+        int n = 4;
+        return new CanWinNim().canWinNim(n);
     }
 
     /**

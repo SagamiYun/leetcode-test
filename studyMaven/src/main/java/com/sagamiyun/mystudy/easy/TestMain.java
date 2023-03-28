@@ -191,7 +191,16 @@ public class TestMain {
         // System.out.println(testWordPattern());
 
         // Nim游戏
-        System.out.println(testCanWinNim());
+        // System.out.println(testCanWinNim());
+
+        // 3的幂
+        // System.out.println(testIsPowerOfThree());
+
+        // 比特位计数
+        // System.out.println(Arrays.toString(testCountBits()));
+
+        // 4的幂
+        System.out.println(testIsPowerOfFour());
     }
 
     private static String leftRe(){
@@ -617,6 +626,21 @@ public class TestMain {
     private static Boolean testCanWinNim() {
         int n = 4;
         return new CanWinNim().canWinNim(n);
+    }
+
+    private static Boolean testIsPowerOfThree() {
+        int n = 27;
+        return new IsPowerOfThree().isPowerOfThree(n);
+    }
+
+    private static int[] testCountBits() {
+        int n = 5;
+        return new CountBits().countBits(n);
+    }
+
+    private static Boolean testIsPowerOfFour() {
+        int n = 16;
+        return new IsPowerOfFour().isPowerOfFour(n);
     }
 
     /**

@@ -200,7 +200,16 @@ public class TestMain {
         // System.out.println(Arrays.toString(testCountBits()));
 
         // 4的幂
-        System.out.println(testIsPowerOfFour());
+        // System.out.println(testIsPowerOfFour());
+
+        // 翻转字符串O(1)
+        // System.out.println(testReverseString());
+
+        // 翻转元音字母
+        // System.out.println(testReverseVowels());
+
+        // 求两个数组的交集
+        System.out.println(Arrays.toString(testIntersection()));
     }
 
     private static String leftRe(){
@@ -643,6 +652,22 @@ public class TestMain {
         return new IsPowerOfFour().isPowerOfFour(n);
     }
 
+    private static char[] testReverseString() {
+        char[] s = {'h', 'e', 'l', 'l', 'o'};
+        new ReverseString().reverseString(s);
+        return s;
+    }
+
+    private static String testReverseVowels() {
+        String s = "Hello, World!";
+        return new ReverseVowels().reverseVowels(s);
+    }
+
+    private static int[] testIntersection() {
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+        return new Intersection().intersection(nums1, nums2);
+    }
     /**
      * 用于打印二叉树的前序遍历
      */

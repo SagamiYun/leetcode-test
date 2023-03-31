@@ -209,7 +209,22 @@ public class TestMain {
         // System.out.println(testReverseVowels());
 
         // 求两个数组的交集
-        System.out.println(Arrays.toString(testIntersection()));
+        // System.out.println(Arrays.toString(testIntersection()));
+
+        // 实现两个数组的交集2
+        // System.out.println(Arrays.toString(testIntersect()));
+
+        // 判断完全平方数
+        // System.out.println(testIsPerfectSquare());
+
+        // 判断字符串是否能构成另一个字符串
+        // System.out.println(testCanConstruct());
+
+        // 获得字符串中唯一的字符
+        // System.out.println(testFirstUniqChar());
+
+        // 找出两个字符串中被添加的元素
+        System.out.println(testFindTheDifference());
     }
 
     private static String leftRe(){
@@ -668,6 +683,34 @@ public class TestMain {
         int[] nums2 = {2, 2};
         return new Intersection().intersection(nums1, nums2);
     }
+
+    private static int[] testIntersect() {
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+
+        return new Intersect().intersect(nums1, nums2);
+    }
+
+    private static Boolean testIsPerfectSquare() {
+        return new IsPerfectSquare().isPerfectSquare(16);
+    }
+
+    private static Boolean testCanConstruct() {
+        String n1 = "a";
+        String n2 = "a";
+        return new CanConstruct().canConstruct(n1, n2);
+    }
+
+    private static Integer testFirstUniqChar() {
+        String s = "leetcode";
+        return new FirstUniqChar().firstUniqChar(s);
+    }
+
+    private static char testFindTheDifference() {
+        String s = "abcd";
+        return new FindTheDifference().findTheDifference(s, s + "e");
+    }
+
     /**
      * 用于打印二叉树的前序遍历
      */
